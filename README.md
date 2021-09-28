@@ -29,7 +29,23 @@ I'm currently using `2021-09-26`. We should set up a CI system that checks if gl
 Given that we are using cutting edge stack, we also prefer to use cutting-edge Erlang. For this we are using a `.deb` file by Erlang Solutions. Currently, we're using R24.0.5.
 
 ```
-wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_24.0.5-1~ubuntu~focal_amd64.deb -O erl.deb
+wget
+https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_24.0.5-1~ubuntu~focal_amd64.deb -O /tmp/erl.deb
 sudo apt install libncurses5
-sudo dpkg -i erl.deb
+sudo dpkg -i /tmp/erl.deb
+rm /tmp/erl.deb
 ```
+
+## Gleam
+
+Clone the project and run `make install`, it will install the compiler locally.
+
+To work with your own projects you'll need `rebar3`, which you can get
+from S3:
+
+```
+mkdir -p ~/.local/bin
+wget https://s3.amazonaws.com/rebar3/rebar3 -O ~/.local/bin/rebar3 && chmod +x ~/.local/bin/rebar3
+```
+
+(add `~/.local/bin` to your PATH environment variable in your `~/.bashrc` if you haven't yet).
