@@ -29,9 +29,8 @@ I'm currently using `2021-09-26`. We should set up a CI system that checks if gl
 Given that we are using cutting edge stack, we also prefer to use cutting-edge Erlang. For this we are using a `.deb` file by Erlang Solutions. Currently, we're using R24.0.5.
 
 ```
-wget
-https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_24.0.5-1~ubuntu~focal_amd64.deb -O /tmp/erl.deb
-sudo apt install libncurses5
+wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_24.0.5-1~ubuntu~focal_amd64.deb -O /tmp/erl.deb
+sudo apt install libncurses5 libwxbase3.0-dev libwxgtk3.0-gtk3-dev libsctp1
 sudo dpkg -i /tmp/erl.deb
 rm /tmp/erl.deb
 ```
