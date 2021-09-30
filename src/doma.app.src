@@ -1,0 +1,15 @@
+{application, doma,
+ [{description, "Writing gleam code once, running it anywhere (in a ygg cluster)"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib,
+    gleam_stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {include_files, ["gleam.toml", "gen"]},
+  {links, []}
+]}.
