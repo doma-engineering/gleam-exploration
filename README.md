@@ -48,3 +48,16 @@ wget https://s3.amazonaws.com/rebar3/rebar3 -O ~/.local/bin/rebar3 && chmod +x ~
 ```
 
 (add `~/.local/bin` to your PATH environment variable in your `~/.bashrc` if you haven't yet).
+
+## Doma cluster
+
+Currently, the way to join the cluster is to connect to yggdrasil overlay network, peering up with one or more doma servers, then run erl shell like so:
+
+```
+erl -pa _build/*/lib/*/ebin -proto_dist inet6_tcp -name doma@202:846:41dd:ff9f:b9db:c2bb:8540:8dc4
+```
+
+Obviously, replacing the IPv6 with your IP address.
+
+Then you would set up erlang cookie to the atom that is obtainable in Doma private knowledge base (KB Doma).
+After you've done this, `net_adm:ping(AnYggdrasilPeer).` will connect you to the cluster.
