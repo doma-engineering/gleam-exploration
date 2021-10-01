@@ -15,9 +15,10 @@ jobs:
       - uses: gleam-lang/setup-erlang@v1.1.2
         with:
           otp-version: 23.2
-      - uses: gleam-lang/setup-gleam@v1.0.2
+      - uses: doma-engineering/setup-gleam@main
         with:
-          gleam-version: 0.18.0-dev
+          gleam-cache: https://ucg.cdn.doma.dev/gleam-VERSION
+          gleam-version: 0.18.0-2021-09-28
       - run: rebar3 install_deps
       - run: rebar3 eunit
       - run: gleam format --check src test
